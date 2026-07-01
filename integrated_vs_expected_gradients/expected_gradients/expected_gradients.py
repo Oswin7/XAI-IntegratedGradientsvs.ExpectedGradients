@@ -6,12 +6,13 @@ import torch
 from torchvision.datasets import ImageFolder
 import random
 
-def expected_gradients(
+def compute_expected_gradients(
     inp, 
     target_label_index,
     predictions_and_gradients,
     num_baselines,
-    steps=50
+    steps=50,
+    seed=42
 ) -> tuple[torch.Tensor, torch.Tensor]:
     '''
     Args:
@@ -27,6 +28,8 @@ def expected_gradients(
 
     integrated_gradients_list = None
     predictions_list = None
+
+    random.seed(seed)
 
     for i in range(0, num_baselines):
         img, _ = train_ds[random.randrange(len(train_ds))]

@@ -47,16 +47,16 @@ def make_predictions_and_gradients(images: List[torch.Tensor], target_label_inde
 
 	grads = images_tensor.grad
 
-	print(output.shape)
-	print(output[0][:10])
-
-	print(torch.max(output))
-	print(torch.min(output))
-
-	print(torch.max(preds))
-	print(torch.min(preds))
-
-	print(torch.sum(preds[0]))
+#	print(output.shape)
+#	print(output[0][:10])
+#
+#	print(torch.max(output))
+#	print(torch.min(output))
+#
+#	print(torch.max(preds))
+#	print(torch.min(preds))
+#
+#	print(torch.sum(preds[0]))
 
 	return preds, grads
 

@@ -78,7 +78,7 @@ def compute_integrated_gradients(
     # Scale input and compute gradients.
     steps -= 1
     scaled_inputs = [baseline + (float(i)/steps)*(inp-baseline) for i in range(0, steps+1)]
-    print(len(scaled_inputs))
+    # print(len(scaled_inputs))
     predictions, grads = predictions_and_gradients(scaled_inputs, target_label_index)  # shapes: <steps+1>, <steps+1, inp.shape>
 
     # Use trapezoidal rule to approximate the integral.
