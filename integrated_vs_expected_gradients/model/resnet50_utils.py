@@ -38,6 +38,28 @@ def make_predictions_and_gradients(images: List[torch.Tensor], target_label_inde
 
 	output = model(images_tensor)
 
+	preds = torch.softmax(output, dim=1)
+
+	target_scores = output[:, target_label_index]
+
+	model.zero_grad()
+	target_scores.sum().backward()
+
+	grads = images_tensor.grad
+
+	print(output.shape)
+	print(output[0][:10])
+
+	print(torch.max(output))
+	print(torch.min(output))
+
+	print(torch.max(preds))
+	print(torch.min(preds))
+
+	print(torch.sum(preds[0]))
+
+	return preds, grads
+
 	# 5. Get predicted class
 	preds = torch.nn.functional.softmax(output, dim=1)
 	pred_target_labels = preds[:,target_label_index]

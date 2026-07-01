@@ -1,11 +1,12 @@
 import numpy as np
+import torch
 
 def compute_integrated_gradients(
     inp, 
     target_label_index,
     predictions_and_gradients,
     baseline,
-    steps=50):
+    steps=50) -> tuple[torch.Tensor, torch.Tensor]:
     """Computes integrated gradients for a given network and prediction label.
 
   Integrated gradients is a technique for attributing a deep network's
@@ -75,6 +76,7 @@ def compute_integrated_gradients(
     assert(baseline.shape == inp.shape)
 
     # Scale input and compute gradients.
+    steps -= 1
     scaled_inputs = [baseline + (float(i)/steps)*(inp-baseline) for i in range(0, steps+1)]
     print(len(scaled_inputs))
     predictions, grads = predictions_and_gradients(scaled_inputs, target_label_index)  # shapes: <steps+1>, <steps+1, inp.shape>
