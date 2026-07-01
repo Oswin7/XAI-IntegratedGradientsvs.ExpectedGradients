@@ -214,7 +214,7 @@ def compute_stability(img: Image.Image, target_label_index: int = 0, baseline = 
     axs[2, 2].set_title(f"pearson-similarity: {float(similarities_eg[1]["pearson"]):.4f}\nprob: {eg_perturbation_probs[1]:.3f}", fontsize=4)
     axs[0, 3].set_title(f"x: {translation_x}, y: {translation_y}", fontsize=4) # translation
     axs[1, 3].set_title(f"pearson-similarity: {float(similarities_ig[2]["pearson"]):.4f}\nprob: {ig_perturbation_probs[2]:.3f}", fontsize=4)
-    axs[2, 3].set_title(f"pearson-similarity: {float(similarities_eg[2]["pearson"]):.4f}\nprob: {ig_perturbation_probs[2]:.3f}", fontsize=4)
+    axs[2, 3].set_title(f"pearson-similarity: {float(similarities_eg[2]["pearson"]):.4f}\nprob: {eg_perturbation_probs[2]:.3f}", fontsize=4)
 
     for i in range(rows): # 3
         for j in range(cols): # 4
