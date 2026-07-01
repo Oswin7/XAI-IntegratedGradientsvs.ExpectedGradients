@@ -1,1 +1,4 @@
-imagenette2-320/    
+*.tgz
+imagenette2-320.tgz
+integrated_vs_expected_gradients/imagenette2-320.tgz
+imagenette2-320/
