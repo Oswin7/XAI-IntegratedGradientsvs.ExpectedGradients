@@ -72,6 +72,7 @@ def compute_integrated_gradients(
       model.
   """  
     if baseline is None:
+        # baseline = (inp+1)/(inp+1)
         baseline = 0*inp
     assert(baseline.shape == inp.shape)
 

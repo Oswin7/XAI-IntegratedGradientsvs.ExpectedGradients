@@ -270,11 +270,11 @@ def stabilty_test(seed = -1, num_baselines = 2, num_steps = 10, plot_name = "plo
     print("done")
 
 if __name__ == "__main__":
-    for i in range (10):
-        stabilty_test(seed = i, num_baselines = 5, num_steps = 10, plot_name = f"run{i}_plot_{i}_baselines5_steps10.png")
+#    for i in range (10):
+#        stabilty_test(seed = i, num_baselines = 5, num_steps = 10, plot_name = f"run{i}_plot_{i}_baselines5_steps10.png")
 #    for i in range (10):
 #        stabilty_test(seed = -1, num_baselines = 100, num_steps = 25, plot_name = f"run1{i}_plot_seed42_baselines100_steps25.png")
-    stabilty_test(seed = 42, num_baselines = 5, num_steps = 10, plot_name = "plot3.png")
+    stabilty_test(seed = 42, num_baselines = 5, num_steps = 10, plot_name = "plot4.png")
 
     # baseline ig = black/white/grey
     # num_baselines 10, 100
